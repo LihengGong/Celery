@@ -5,7 +5,7 @@ Various configurations are tested.
 
 ## Priority
 
-Conclusion: celery will honor priority as long as the tasks are submitted fast enough.
+Conclusion: celery will honor priority as long as the tasks are submitted fast enough(i.e. at almost the same time).
 
 | Tables        | Single Queue  | Double Queue  |
 | ------------- |:-------------:|:-----:|
