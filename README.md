@@ -8,5 +8,5 @@ Various configurations are tested.
 Conclusion: celery will honor priority as long as the tasks are submitted fast enough.
 
 | Tables        | Single Queue  | Double Queue  |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:|:-----:|
 | Priority      | Yes           | Yes in both queues |
