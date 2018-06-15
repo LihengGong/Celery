@@ -15,7 +15,18 @@ to sort these tasks according to their priority.
 
 In shell in the directory of source code:
 
+
+One worker:
 ```celery worker -A tasks -Q tasksQA,tasksQB --loglevel=info -n W1```
+
+For two workers:
+(both workers handle both queues)
+```celery worker -A tasks -Q tasksQA,tasksQB --loglevel=info -n W1```
+```celery worker -A tasks -Q tasksQA,tasksQB --loglevel=info -n W2```
+Or:
+(each worker has a dedicated queue)
+```celery worker -A tasks -Q tasksQA --loglevel=info -n W1```
+```celery worker -A tasks -Q tasksQB --loglevel=info -n W1```
 
 In another shell:
 
