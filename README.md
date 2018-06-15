@@ -1,7 +1,7 @@
 # Celery
 Celery Configuration tests
 
-# Priority
+## Priority
 
 Conclusion: celery will honor priority as long as the tasks are submitted fast enough.
 
@@ -9,3 +9,12 @@ For task priority to take effect, tasks should be submitted fast enough at the s
 to sort these tasks according to their priority.
 
 
+## How to run the test
+
+In shell in the directory of source code:
+
+```celery worker -A tasks -Q tasksQA --loglevel=info -n W1```
+
+In another shell:
+
+```./run_all.sh```
