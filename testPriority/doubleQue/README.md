@@ -1,4 +1,4 @@
-# Celery
+# Celery priority test code
 Celery Configuration tests
 
 ## Priority
