@@ -13,7 +13,7 @@ to sort these tasks according to their priority.
 
 ## How to run the test
 
-In shell in the directory of source code:
+### In one shell in the directory of source code:
 
 
 One worker:
@@ -35,6 +35,6 @@ Or:
 
 ```celery worker -A tasks -Q tasksQB --loglevel=info -n W1```
 
-In another shell:
+### In another shell:
 
 ```./run_all.sh```
