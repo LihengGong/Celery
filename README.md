@@ -32,9 +32,9 @@ Conclusion: celery will honor task priority as long as the tasks are submitted f
 
 However, task priority depends on the broker.
 
-The following is comment from celery community.
+The following quote is comment from celery community.
 
-From https://github.com/celery/celery/issues/4819
+https://github.com/celery/celery/issues/4819
 
 > Task priority is tricky.
 It is actually implemented by the broker.
