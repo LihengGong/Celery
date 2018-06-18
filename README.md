@@ -24,7 +24,7 @@ https://mariuszwojcik.wordpress.com/2014/05/19/how-to-choose-prefetch-count-valu
 
 ## Priority
 
-Conclusion: celery will honor priority as long as the tasks are submitted fast enough(i.e. at almost the same time).
+Conclusion: celery will honor priority as long as the tasks are submitted fast enough(i.e. at almost the same time), or put it more formally, if task priority is used, then the broker should be given enough time to "sort" the messages; if the tasks are very short, they will finish before the broker has enough time to "sort" them.
 
 | Tables        | Single Queue  | Double Queue  |
 | ------------- |:-------------:|:-----:|
