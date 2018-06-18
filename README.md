@@ -17,6 +17,11 @@ Refer to this link for a (relative) detailed explanation
 
 https://stackoverflow.com/questions/16040039/understanding-celery-task-prefetching
 
+Note that `prefetch count` is concept inherited from rabbitMQ. Please refer to this link for the concept of `prefetch count`:
+
+https://mariuszwojcik.wordpress.com/2014/05/19/how-to-choose-prefetch-count-value-for-rabbitmq/
+
+
 ## Priority
 
 Conclusion: celery will honor priority as long as the tasks are submitted fast enough(i.e. at almost the same time).
