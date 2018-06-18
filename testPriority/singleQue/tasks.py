@@ -5,6 +5,10 @@ import time
 
 app = Celery('tasks', backend = 'rpc://', broker = 'pyamqp://')
 
+#http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-worker_prefetch_multiplier
+#but the explanation is confusing
+#Refer to this link for a (relative) detailed explanation
+#https://stackoverflow.com/questions/16040039/understanding-celery-task-prefetching
 app.conf.worker_prefetch_multiplier = 1
 app.conf.task_acks_late = True
 
