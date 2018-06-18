@@ -22,13 +22,15 @@ Note that `prefetch count` is concept inherited from rabbitMQ. Please refer to t
 https://mariuszwojcik.wordpress.com/2014/05/19/how-to-choose-prefetch-count-value-for-rabbitmq/
 
 
-## Priority
+## Task Priority
 
-Conclusion: celery will honor priority as long as the tasks are submitted fast enough(i.e. at almost the same time), or put it more formally, if task priority is used, then the broker should be given enough time to "sort" the messages; if the tasks are very short, they will finish before the broker has enough time to "sort" them.
+Conclusion: celery will honor task priority as long as the tasks are submitted fast enough(i.e. at almost the same time), or put it more formally, if task priority is used, then the broker should be given enough time to "sort" the messages; if the tasks are very short, they will finish before the broker has enough time to "sort" them.
 
 | Tables        | Single Queue  | Double Queue  |
 | ------------- |:-------------:|:-----:|
 | Priority      | Yes           | Yes in both queues |
+
+However, task priority depends on the broker.
 
 From https://github.com/celery/celery/issues/4819
 
