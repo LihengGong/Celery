@@ -7,6 +7,8 @@ Various configurations are tested.
 
 ```app.conf.worker_prefetch_multiplier = 1```
 
+```app.conf.task_acks_late = True```
+
 http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-worker_prefetch_multiplier
 
 but the explanation is confusing
