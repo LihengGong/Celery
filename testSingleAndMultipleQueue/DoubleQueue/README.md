@@ -21,6 +21,7 @@ So that quick tasks can complete rather quickly and are not affected by long tas
 In shell in the directory of source code:
 
 ```celery worker -A tasks -Q tasksQQuick --loglevel=info -n W1```
+
 ```celery worker -A tasks -Q tasksQLong --loglevel=info -n W2```
 
 In another shell:
