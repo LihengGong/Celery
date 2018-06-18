@@ -31,7 +31,6 @@ Conclusion: celery will honor task priority as long as the tasks are submitted f
 | Priority      | Yes           | Yes in both queues |
 
 However, task priority depends on the broker.
-
 From https://github.com/celery/celery/issues/4819
 
 > Task priority is tricky.
@@ -41,7 +40,7 @@ So, in order to actually test priority you should try to run the worker with onl
 Finally, try to queue the tasks and after that start the worker.
 If there's nothing else in the queue you might not see priority sorting happening because of what goes on on the backend.
 
-It's usually recommended to use priority queues instead of broker priority weight. This way you group together any important tasks and give it more resources.
+>It's usually recommended to use priority queues instead of broker priority weight. This way you group together any important tasks and give it more resources.
 
 ## Retry
 
