@@ -26,7 +26,9 @@ will gracefully shutdown the worker remotely.
 
 Then the worker will stop.
 
-Note that occasionally, python will throw an exception.
+Note that occasionally, python will throw an exception as below.
+>Task handler raised error: WorkerLostError('Worker exited prematurely: exitcode 0.',)
 
 If the worker is started again, the tasks will resume:
-```celery worker -A tasks -Q tasksQA --loglevel=info -n W1```
+
+`celery worker -A tasks -Q tasksQA --loglevel=info -n W1`
