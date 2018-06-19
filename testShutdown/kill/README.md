@@ -1,10 +1,9 @@
-# Celery shutdown test code
+# Celery kill test code
 Celery Configuration tests
 
-## Graceful shutdown
+## Kill directly
 
-`app.control.broadcast('shutdown')`
-will directly kill the worker from shell.
+Directly kill the worker from shell.
 
 
 
