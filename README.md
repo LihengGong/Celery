@@ -3,6 +3,16 @@ Celery Configuration tests
 
 Various configurations are tested.
 
+***Caveat***: this code is only intended for study celery configurations.
+
+Problems:
+
++ There is much redundant code.
++ Some arguments are hard-coded.
+
+To-do:
+Will restructure the code.
+
 ### Two configurations that need explanation:
 
 ```app.conf.worker_prefetch_multiplier = 1```
