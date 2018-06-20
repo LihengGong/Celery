@@ -27,8 +27,8 @@ num2 = 0
 num3 = 0
 num4 = 0
 
-SLEEPTIME_SHORT = 50
-SLEEPTIME_LONG = 50
+SLEEPTIME_SHORT = 5
+SLEEPTIME_LONG = 5
 
 @app.task
 def example_task1():

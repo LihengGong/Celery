@@ -24,3 +24,7 @@ consuming from queue respectively:
 We can see that celery worker `W1` will stop consuming from `tasksQA` after receiving the
 `cancel_consumer` call and will start consuming from `tasksQA` after receiving the `add_consumer`
 call.
+
+
+## Some observations
++ Start a worker, then tell the worker to stop consuming from a queue, then kill the worker and restart it, the worker will consuming from that queue again.
