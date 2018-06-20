@@ -60,3 +60,13 @@ If there's nothing else in the queue you might not see priority sorting happenin
 Still working on the test code. Will update.
 
 ## Multiple Queues
+
+
+## Monitoring and management
+
+Various commands for monitoring and management.
+To list a few:
+
+`celery -A proj inspect stats`
+
+`celery -A proj inspect active`
