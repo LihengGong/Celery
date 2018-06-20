@@ -15,3 +15,6 @@ def get_celery_worker_status():
     except ImportError as e:
         d = {ERROR_KEY: str(e)}
     return d
+
+d = get_celery_worker_status()
+print(d)
