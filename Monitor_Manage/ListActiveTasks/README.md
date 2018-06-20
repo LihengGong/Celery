@@ -1,16 +1,16 @@
 
 # List active tasks
 
-celery -A tasks inspect active
+`celery -A tasks inspect active`
 
 
-When there are no active tasks:
+### When there are no active tasks:
 
 Output:
  >celery@W1: OK
     - empty -
 
-When there are active tasks:
+### When there are active tasks:
 
 Output:
  >celery@W1: OK
