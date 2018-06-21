@@ -24,4 +24,4 @@ There are two kinds of time limit:
 We can see that `example_task1` will execute for 30 seconds(the soft time limit set in the code) before an exception is thrown.
 
 ## Some observations:
-The task will be gone that triggers the soft time limit and does the clean up.
+The task will be gone after it triggers the soft time limit and does the clean up.
