@@ -1,6 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 from celery import Celery
 from kombu import Queue, Exchange
+from celery.exceptions import SoftTimeLimitExceeded
 import time
 
 app = Celery('tasks', backend = 'rpc://', broker = 'pyamqp://')
@@ -30,14 +31,22 @@ num4 = 0
 SLEEPTIME_SHORT = 3
 SLEEPTIME_LONG = 3
 
-@app.task
+@app.task(soft_time_limit=30)
 def example_task1():
     global num1
     global SLEEPTIME_SHORT
-    print('Start1: ' + str(num1) + ', Start1')
-    time.sleep(SLEEPTIME_SHORT)
-    print('End1: ' + str(num1) + ', End1.')
-    num1 += 1
+    totalCnt = 15
+    i = 0
+    try:
+        print('Start1: ' + str(num1) + ', Start1')
+        while i < totalCnt:
+            time.sleep(SLEEPTIME_SHORT)
+            i += 1
+            print('task1: ' + str(i))
+            num1 += 1
+        print('End1: ' + str(num1) + ', End1.')
+    except SoftTimeLimitExceeded:
+        print('time exceeded: i = ' + str(i))
 
 @app.task
 def example_task2():
