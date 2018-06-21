@@ -1,14 +1,17 @@
-# Stop and Start Consuming from a Queue
+# Set soft timeout to task
 
-Two APIs can be used to tell all(or specific) workers to stop or start
-consuming from queue respectively:
+A single task can potentially run forever and if there are too many such tasks the worker will be jammed.
 
-+ [app name].control.cancel_consumer([queue name])
+So it is a good practice to set a time limit to tasks.
 
-+ [app name].control.add_consumer([queue name])
+There are two kinds of time limit:
+
++ **Soft limit**. The task will throw an exception(SoftTimeLimitExceeded) to allow itself to catch it and do the necessary clean up job before it is killed.
+
++ **Hard limit**. The hard timeout isn't catch-able and the task is forced to terminate.
 
 
-## How to use
+## How to run the test code
 
 + In one shell:
 `celery worker -A tasks -Q tasksQA,tasksQB --loglevel=info -n W1`
@@ -16,15 +19,12 @@ consuming from queue respectively:
 (this command creates a worker named W1 which consumes from queue tasksQA and tasksQB)
 
 + In another shell:
-`python cancel_add.py`
+`./run_all.s`
 
 + In the third shell:
 `./run_all.sh`
 
-We can see that celery worker `W1` will stop consuming from `tasksQA` after receiving the
-`cancel_consumer` call and will start consuming from `tasksQA` after receiving the `add_consumer`
-call.
+We can see that task_1 will execute for 30 seconds(the soft time limit set in the code) before an exception is thrown.
 
-
-## Some observations
-+ Start a worker, then tell the worker to stop consuming from a queue, then kill the worker and restart it, the worker will consuming from that queue again.
+## Some observations:
+The task will be gone that triggers the soft time limit and does the clean up.
