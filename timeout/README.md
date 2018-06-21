@@ -21,7 +21,7 @@ There are two kinds of time limit:
 + In another shell:
 `./run_all.sh`
 
-We can see that task_1 will execute for 30 seconds(the soft time limit set in the code) before an exception is thrown.
+We can see that `example_task1` will execute for 30 seconds(the soft time limit set in the code) before an exception is thrown.
 
 ## Some observations:
 The task will be gone that triggers the soft time limit and does the clean up.
