@@ -19,9 +19,6 @@ There are two kinds of time limit:
 (this command creates a worker named W1 which consumes from queue tasksQA and tasksQB)
 
 + In another shell:
-`./run_all.s`
-
-+ In the third shell:
 `./run_all.sh`
 
 We can see that task_1 will execute for 30 seconds(the soft time limit set in the code) before an exception is thrown.
